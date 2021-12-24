@@ -468,8 +468,8 @@ class NetSuiteClient:
             result.records = result.recordList.record
             return result
         else:
-            exc = self._request_error('searchMoreWithId', detail=status['statusDetail'][0])
-            raise exc
+            # exc = self._request_error('searchMoreWithId', detail=status['statusDetail'][0])
+            return None
 
     def upsert(self, record):
         """
