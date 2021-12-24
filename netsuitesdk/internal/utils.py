@@ -63,5 +63,10 @@ class PaginatedSearch:
             return
         if page_index > self.total_pages or page_index < 1:
             return
-        self._result = self._ns.searchMoreWithId(searchId=self._result.searchId,
+        result = self._ns.searchMoreWithId(searchId=self._result.searchId,
                                                  pageIndex=page_index)
+        if not result:
+            self._result.pageIndex = self._result.pageIndex + 1
+            self._result.records = []
+        else:
+            self._result = result
