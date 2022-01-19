@@ -10,6 +10,7 @@ import logging
 import os.path
 import random
 import time
+import backoff
 
 from zeep import Client
 from zeep.cache import SqliteCache
@@ -20,6 +21,12 @@ from zeep.exceptions import LookupError as ZeepLookupError
 from .constants import *
 from .exceptions import *
 from .netsuite_types import *
+
+
+logger = logging.getLogger()
+logging.getLogger('backoff').setLevel(logging.CRITICAL)
+def log_backoff_attempt(details):
+    logger.info("ConnectionFailure detected, triggering backoff: %d try", details.get("tries"))
 
 
 class NetSuiteClient:
@@ -327,6 +334,12 @@ class NetSuiteClient:
 
         return soapheaders
 
+
+    @backoff.on_exception(backoff.expo,
+                          Exception,
+                          max_tries=5,
+                          factor=3,
+                          on_backoff=log_backoff_attempt)
     def request(self, name, *args, **kwargs):
         """
         Make a NetSuite web service request
