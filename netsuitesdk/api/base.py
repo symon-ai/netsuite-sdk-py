@@ -82,16 +82,12 @@ class ApiBase:
         logger.debug('total pages = %d, records in page = %d', paginated_search.total_pages, paginated_search.num_records)
         logger.debug(f'current page index {paginated_search.page_index}')
         logger.debug('going to page %d', 0)
-
-        records = []
         
         for p in range(1, num_pages + 1):
             logger.debug('going to page %d', p)
             paginated_search.goto_page(p)
             logger.debug(f'current page index {paginated_search.page_index}')
-            records.extend(paginated_search.records)
-
-        return records
+            yield paginated_search.records
 
     @staticmethod
     def _paginated_search_generator(paginated_search: PaginatedSearch):
