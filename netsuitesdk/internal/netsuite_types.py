@@ -63,8 +63,10 @@ COMPLEX_TYPES = {
         'CustomListSearchBasic',
         'TermSearchBasic',
         'DepartmentSearchBasic',
-        'ItemSearchBasic', 'ItemSearchRowBasic',
+        'ItemSearchBasic',
+        'ItemSearchRowBasic',
         'ClassificationSearchBasic',
+        'InboundShipmentSearchBasic'
     ],
 
     'ns6': [
@@ -111,6 +113,7 @@ COMPLEX_TYPES = {
     # urn:purchases_2017_2.transactions.webservices.netsuite.com
     # https://webservices.netsuite.com/xsd/transactions/v2017_2_0/purchases.xsd
     'ns21': [
+        'InboundShipment',
         'VendorBill',
         'VendorBillExpense',
         'VendorBillExpenseList',
