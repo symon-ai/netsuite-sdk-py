@@ -70,7 +70,7 @@ COMPLEX_TYPES = {
     ],
 
     'ns6': [
-      'ItemCostEstimateType',
+        'ItemCostEstimateType',
     ],
 
     # urn:relationships.lists.webservices.netsuite.com
@@ -176,6 +176,8 @@ COMPLEX_TYPES = {
         'File',
         'FileSearch'
     ],
+    # urn:customers.transactions.webservices.netsuite.com
+    'ns39': ['CustomerPayment']
 }
 
 SIMPLE_TYPES = {

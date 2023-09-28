@@ -1,3 +1,4 @@
+from netsuitesdk.api.customer_payments import CustomerPayments
 from .api.accounts import Accounts
 from .api.classifications import Classifications
 from .api.credit_memos import CreditMemos
@@ -61,6 +62,7 @@ class NetSuiteConnection:
         self.custom_records = CustomRecords(ns_client)
         self.custom_record_types = CustomRecordTypes(ns_client)
         self.customers = Customers(ns_client)
+        self.customer_payments = CustomerPayments(ns_client)
         self.projects = Projects(ns_client)
         self.vendor_payments = VendorPayments(ns_client)
         self.invoices = Invoices(ns_client)
