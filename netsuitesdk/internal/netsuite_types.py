@@ -99,7 +99,8 @@ COMPLEX_TYPES = {
         'DepartmentSearch',
         'ItemSearch', 'ItemSearchAdvanced', 'ItemSearchRow',
         'ClassificationSearch',
-        'PriceLevelSearch'
+        'PriceLevelSearch',
+        'Currency'
     ],
 
     'ns19': [
