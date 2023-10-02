@@ -177,7 +177,7 @@ COMPLEX_TYPES = {
         'FileSearch'
     ],
     # urn:customers.transactions.webservices.netsuite.com
-    'ns39': ['CustomerPayment']
+    'ns39': ['CustomerPayment''CustomerPaymentSearch']
 }
 
 SIMPLE_TYPES = {
