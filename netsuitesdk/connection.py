@@ -58,7 +58,6 @@ class NetSuiteConnection:
         self.folders = Folders(ns_client)
         self.files = Files(ns_client)
         self.expense_categories = ExpenseCategory(ns_client)
-        self.currencies = Currencies(ns_client)
         self.custom_lists = CustomLists(ns_client)
         self.custom_records = CustomRecords(ns_client)
         self.custom_record_types = CustomRecordTypes(ns_client)
