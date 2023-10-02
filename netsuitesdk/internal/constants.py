@@ -21,6 +21,7 @@ SEARCH_RECORD_TYPES = [
     'customer',
     'customerCategory',
     'customerMessage',
+    'customerPayment',
     'customerStatus',
     'customList',
     'customRecord',
