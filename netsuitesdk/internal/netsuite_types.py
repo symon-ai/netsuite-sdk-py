@@ -133,13 +133,14 @@ COMPLEX_TYPES = {
         'VendorPaymentCreditList',
         'VendorPaymentApply'
     ],
-
+    # urn:customers.transactions.webservices.netsuite.com
     'ns23': [
         'CreditMemo',
         'CreditMemoApply',
         'CreditMemoApplyList',
         'CreditMemoItem',
         'CreditMemoItemList',
+        'CustomerPayment'
     ],
 
     # urn:general_2019_2.transactions.webservices.netsuite.com
@@ -176,9 +177,7 @@ COMPLEX_TYPES = {
         'Folder',
         'File',
         'FileSearch'
-    ],
-    # urn:customers.transactions.webservices.netsuite.com
-    'ns39': ['CustomerPayment']
+    ]
 }
 
 SIMPLE_TYPES = {
