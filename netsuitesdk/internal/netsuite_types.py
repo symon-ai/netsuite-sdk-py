@@ -70,7 +70,7 @@ COMPLEX_TYPES = {
     ],
 
     'ns6': [
-      'ItemCostEstimateType',
+        'ItemCostEstimateType',
     ],
 
     # urn:relationships.lists.webservices.netsuite.com
@@ -99,7 +99,8 @@ COMPLEX_TYPES = {
         'DepartmentSearch',
         'ItemSearch', 'ItemSearchAdvanced', 'ItemSearchRow',
         'ClassificationSearch',
-        'PriceLevelSearch'
+        'PriceLevelSearch',
+        'Currency'
     ],
 
     'ns19': [
@@ -132,13 +133,14 @@ COMPLEX_TYPES = {
         'VendorPaymentCreditList',
         'VendorPaymentApply'
     ],
-
+    # urn:customers.transactions.webservices.netsuite.com
     'ns23': [
         'CreditMemo',
         'CreditMemoApply',
         'CreditMemoApplyList',
         'CreditMemoItem',
         'CreditMemoItemList',
+        'CustomerPayment'
     ],
 
     # urn:general_2019_2.transactions.webservices.netsuite.com
@@ -175,7 +177,7 @@ COMPLEX_TYPES = {
         'Folder',
         'File',
         'FileSearch'
-    ],
+    ]
 }
 
 SIMPLE_TYPES = {
