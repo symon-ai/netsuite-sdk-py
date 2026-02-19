@@ -33,6 +33,9 @@ class NetSuiteClient:
     """The Netsuite client class providing access to the Netsuite
     SOAP/WSDL web service"""
 
+    # update the url endpoint to newer version since newer Zeep cannot support old ones
+    # but like it or not SOAP is being deprecated soon, we need to upgrade to their REST API
+    # https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_N3418621.html
     WSDL_URL_TEMPLATE = 'https://{account}.suitetalk.api.netsuite.com/wsdl/v2024_1_0/netsuite.wsdl'
     DATACENTER_URL_TEMPLATE = 'https://{account}.suitetalk.api.netsuite.com/services/NetSuitePort_2024_1'
 
