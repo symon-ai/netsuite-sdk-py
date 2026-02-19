@@ -33,8 +33,11 @@ class NetSuiteClient:
     """The Netsuite client class providing access to the Netsuite
     SOAP/WSDL web service"""
 
-    WSDL_URL_TEMPLATE = 'https://{account}.suitetalk.api.netsuite.com/wsdl/v2019_1_0/netsuite.wsdl'
-    DATACENTER_URL_TEMPLATE = 'https://{account}.suitetalk.api.netsuite.com/services/NetSuitePort_2019_1'
+    # update the url endpoint to newer version since newer Zeep cannot support old ones
+    # but like it or not SOAP is being deprecated soon, we need to upgrade to their REST API
+    # https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_N3418621.html
+    WSDL_URL_TEMPLATE = 'https://{account}.suitetalk.api.netsuite.com/wsdl/v2024_1_0/netsuite.wsdl'
+    DATACENTER_URL_TEMPLATE = 'https://{account}.suitetalk.api.netsuite.com/services/NetSuitePort_2024_1'
 
     _search_preferences = None
     _passport = None
@@ -82,7 +85,7 @@ class NetSuiteClient:
 
         # default service points to wrong data center. need to create a new service proxy and replace the default one
         self._service_proxy = self._client.create_service(
-            '{urn:platform_2019_1.webservices.netsuite.com}NetSuiteBinding', self._datacenter_url)
+            '{urn:platform_2024_1.webservices.netsuite.com}NetSuiteBinding', self._datacenter_url)
 
         # Parse all complex types specified in :const:`~netsuitesdk.netsuite_types.COMPLEX_TYPES`
         # and store them as attributes of this instance. Same for simple types.
